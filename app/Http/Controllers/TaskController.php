@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -11,7 +12,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Task::with('category')->get());
     }
 
     /**
@@ -27,7 +28,18 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string',
+            'category_id' => 'required|exists:categories,id'
+        ]);
+
+        $task = Task::create([
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'is_done' => false
+        ]);
+
+        return response()->json($task, 201);
     }
 
     /**
@@ -51,7 +63,18 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        if(!$task){
+            return response()->json(['message' => 'Task not found'], 404);
+        }
+
+        $request->validate([
+            'name' => 'sometimes|required|string|max:255',
+        ]);
+
+        $task->update($request->only(['title', 'category_id', 'is_done']));
+        return response()->json($task);
     }
 
     /**
@@ -59,6 +82,14 @@ class TaskController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $task = Task::findOrfail($id);
+
+        if(!$task){
+            return response()->json(['message' => 'Task not found'], 404);
+        }
+
+        $task->delete();
+
+        return response()->json(['message' => 'Task deleted']);
     }
 }

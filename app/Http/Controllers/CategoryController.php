@@ -60,7 +60,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        if(!$category){
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+
+        $request->validate([
+            'name' => 'sometimes|required|string|max:255',
+        ]);
+
+        $category->update($request->only(['name']));
+        return response()->json($category);
     }
 
     /**
@@ -68,6 +79,14 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::findOrfail($id);
+
+        if(!$category){
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+
+        $category->delete();
+
+        return response()->json(['message' => 'Category deleted']);
     }
 }
