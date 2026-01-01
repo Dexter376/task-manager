@@ -1,59 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛡️ PostgreSQL Task Manager (Backend API)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is the **Backend API** for a Task Manager application. It acts as the "Brain" of the project, handling data security, validation, and storage.
 
-## About Laravel
+It is built with **Laravel 12** and **PostgreSQL** to demonstrate an enterprise-grade database structure (using Foreign Keys and Cascade Deletes).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Architecture
+This project is decoupled (separated) into two parts:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1.  **Backend (This Repository):** * **Logic:** Laravel 12 Controllers & Routes
+    * **Database:** PostgreSQL 16
+    * **Role:** Provides a REST API (JSON) for the frontend to consume.
 
-## Learning Laravel
+2.  **Frontend (Separate Repository):**
+    * **Tech:** HTML + Vanilla JavaScript
+    * **Role:** A minimal interface to test the API connection.
+    * **🔗 [View the Frontend Repository Here](https://github.com/arivanismail-05/task-client-task-manager)**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tech Stack (Backend)
+* **Framework:** Laravel 12
+* **Database:** PostgreSQL (Connection via `pgsql` driver)
+* **API Style:** RESTful JSON
+* **Server:** Apache/Nginx (Local Development via Laragon/XAMPP)
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚙️ How to Run This Backend
 
-### Premium Partners
+1.  **Clone the Repo**
+    ```bash
+    git clone [https://github.com/arivanismail-05/task-manager.git](https://github.com/arivanismail-05/task-manager.git)
+    cd task-manager
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2.  **Setup Database**
+    * Ensure PostgreSQL is running.
+    * Create a database named `task_manager`.
+    * Update your `.env` file with your DB credentials.
 
-## Contributing
+3.  **Install & Migrate**
+    ```bash
+    composer install
+    php artisan migrate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4.  **Start Server**
+    ```bash
+    php artisan serve
+    ```
+    The API will be live at: `http://127.0.0.1:8000/api`
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📝 API Endpoints
+These are the routes available for the frontend to use:
 
-## Security Vulnerabilities
+| Method | Endpoint | Action |
+| :--- | :--- | :--- |
+| `GET` | `/api/categories` | Get all categories |
+| `POST` | `/api/categories` | Create a new category |
+| `DELETE` | `/api/categories/{id}` | Delete a category (and its tasks) |
+| `GET` | `/api/tasks` | Get all tasks |
+| `POST` | `/api/tasks` | Create a new task |
+| `PUT` | `/api/tasks/{id}` | Update task (e.g., mark as done) |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 💡 Note to Visitors & Challenges
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project serves as a **Backend Foundation**. I have intentionally kept the Frontend simple (Plain HTML/JS) to focus on the Backend logic.
+
+**How to use this:**
+1.  Run this backend server.
+2.  Open the linked Frontend repository (`index.html`) to interact with the app.
+
+**Challenges for You:**
+I invite you to fork this repo and improve it:
+* **Add Design:** The current frontend has no CSS. Feel free to add Tailwind, Bootstrap, or your own custom design to make it look professional.
+* **Implement Features:** The Backend includes API routes for `Update` (PUT) and `Delete` (DELETE). Can you add buttons in the frontend to trigger these?
+* **Architecture:** Try replacing the HTML frontend with a React or Vue.js application.
